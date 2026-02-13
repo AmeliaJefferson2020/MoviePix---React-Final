@@ -9,7 +9,7 @@ const Landing = () => {
           <div className="header__description">
             <h1>America's Most Awarded Movie Subscription Platform</h1>
             <h2>
-              Find Your Favorite Movie With{" "}
+              Find Your Favorite Movie With
               <span className="yellow">MoviePix</span>
             </h2>
           </div>
