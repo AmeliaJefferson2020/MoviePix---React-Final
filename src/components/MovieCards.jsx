@@ -15,9 +15,6 @@ const MovieCards = () => {
                 <p>
                   <b>Title: </b>Movie Title
                 </p>
-                <p>
-                  <b>Released: </b>Release Year
-                </p>
               </div>
             </div>
           </div>
