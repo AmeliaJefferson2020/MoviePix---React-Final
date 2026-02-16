@@ -8,8 +8,8 @@ const Movies = () => {
         <div className="movies__row">
           <div className="search__header">
             <h2 className="search__result--title">Search Results:</h2>
-            <select id="sort">
-              <option disabled={true}>Sort By Year</option>
+            <select id="filter" defaultValue="DEFAULT">
+              <option value="DEFAULT">Sort By Year</option>
               <option value="NEWEST_TO_OLDEST">Newest To Oldest</option>
               <option value="OLDEST_TO_NEWEST">Oldest To Newest</option>
             </select>
