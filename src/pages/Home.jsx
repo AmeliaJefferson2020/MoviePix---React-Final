@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MoviesContext } from "../App";
 import { useNavigate, useParams } from "react-router-dom";
-import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Search from "../components/Search";
-import Content from "../components/Content";
 import MovieCard from "../components/MovieCard";
-import LoadingSpinner from "../assets/LoadingSpinner.png";
+import LoadingSpinner from "../assets/LoadingSpinner.gif";
 
 const Home = () => {
   const {
@@ -97,7 +95,7 @@ const Home = () => {
             sortedMovies.map((movie, index) => (
               <MovieCard
                 key={index}
-                imdbID={movie.imdbID}
+                omdbID={movie.omdbID}
                 poster={movie.Poster}
                 title={movie.Title}
                 year={movie.Year}
@@ -109,7 +107,7 @@ const Home = () => {
               <MovieCard
                 key={index}
                 search={search}
-                imdbID={movie.imdbID}
+                omdbID={movie.omdbID}
                 poster={movie.Poster}
                 title={movie.Title}
                 year={movie.Year}
