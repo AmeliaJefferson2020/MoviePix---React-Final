@@ -87,7 +87,7 @@ const MovieInfo = () => {
     return formatDate;
   }
 
-  function convertToHourAndMin(paramTime) {
+  function convertToHrAndMin(paramTime) {
     if (!paramTime || paramTime === "") {
       paramTime = "106 mins";
     }

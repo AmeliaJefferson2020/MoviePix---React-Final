@@ -14,8 +14,8 @@ const Nav = ({ landing, cardinfo }) => {
         </Link>
       </div>
       <div className="nav__links">
-        <Link to="/">Home</Link>
-        <Link to="/home">Find Your Movie</Link>
+        <Link to="/" className="nav__link">Home</Link>
+        <Link to="/home" className="nav__link">Find Your Movie</Link>
       </div>
     </nav>
   );

@@ -5,7 +5,7 @@ import {
   Route,
   useParams,
 } from "react-router-dom";
-import "./App.css";
+import "./index.css";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import MovieInfo from "./components/MovieInfo";

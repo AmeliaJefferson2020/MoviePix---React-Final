@@ -6,7 +6,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
   const { movies, keyword, setKeyword, loading, setLoading, getMovies } =
     useContext(MoviesContext);
   const navigate = useNavigate();
-  console.log(keyword, typeof keyword);
+  console.log(keyword);
   const initSearch = () => {
     setLoading(true);
   };
@@ -28,12 +28,12 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
     >
       <h1 className="search__title">
         {landing
-          ? "America's Most Awarded Movie Subscription Platform"
+          ? <>America's Most Awarded <span className="title__span">Movie Subscription Platform</span></>
           : "Browse Movies"}
       </h1>
       {landing ? (
         <h2 className="search__sub-title">
-          Find Your Favorite Movie With <span>MoviePix</span>
+          Find Your Favorite Movie With <span className="sub__title--span">MoviePix</span>
         </h2>
       ) : null}
       <div className="input__wrapper">
@@ -48,7 +48,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
         />
         {landing ? (
           loading ? (
-            <button data-v-2a11e7ca="" className="search__button-link loading">
+            <button data-v-2a11e7ca="" className="search__button--link loading">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -69,7 +69,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
             </button>
           ) : (
             <buttton
-              className="search__button search__button-link"
+              className="search__button search__button--link"
               onClick={() => searchSubmit()}
             >
               <svg
