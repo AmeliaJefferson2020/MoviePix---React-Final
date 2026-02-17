@@ -1,21 +1,68 @@
-import React from "react";
-import Nav from "./components/Nav";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { createContext, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams,
+} from "react-router-dom";
+import "./App.css";
 import Home from "./pages/Home";
-import Movies from "./pages/Movies";
+import Landing from "./pages/Landing";
+import MovieInfo from "./components/MovieInfo";
+import axios from "axios";
+export const MoviesContext = createContext();
 
-const App = () => {
+function App() {
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [keyword, setKeyword] = useState("");
+
+  const getMovies = async (paramStr) => {
+    console.log(
+      `http://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr}`,
+    );
+    try {
+      console.log(loading);
+      const { data } = await axios.get(
+        `http://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr || ""}`,
+      );
+      const { Search } = data;
+      setMovies(!Search ? null : Search);
+    } catch (error) {
+      console.log(error);
+      console.log(loading);
+    } finally {
+      console.log(loading);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  };
+
   return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <MoviesContext.Provider
+        value={{
+          movies,
+          setMovies,
+          keyword,
+          setKeyword,
+          loading,
+          setLoading,
+          getMovies,
+        }}
+      >
+        <Router>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/home/:search" element={<Home />} />
+            <Route path="/home/:search/:id" element={<MovieInfo />} />
+          </Routes>
+        </Router>
+      </MoviesContext.Provider>
+    </div>
   );
-};
+}
 
 export default App;

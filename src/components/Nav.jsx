@@ -1,21 +1,21 @@
 import React from "react";
 import MovieLogo from "../assets/MovieLogo.png";
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ landing, cardinfo }) => {
   return (
-    <nav>
-      <div className="nav__container">
-        <a href="/">
-          <img src={MovieLogo} className="logo" />
-        </a>
-        <ul className="nav__links">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/movies">Movies</a>
-          </li>
-        </ul>
+    <nav className={landing || cardinfo ? "landing" : ""}>
+      <div className="logo">
+        <Link to="/">
+          <img
+            src={landing || cardinfo ? MovieLogo : MovieLogo}
+            className="logo__img"
+          />
+        </Link>
+      </div>
+      <div className="nav__links">
+        <Link to="/">Home</Link>
+        <Link to="/home">Find Your Movie</Link>
       </div>
     </nav>
   );

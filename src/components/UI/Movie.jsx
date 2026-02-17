@@ -1,0 +1,70 @@
+import React, { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import Rating from "./Rating";
+import Price from "./BoxOffice";
+
+const Movie = ({
+  search,
+  movie,
+  title,
+  convertToDate,
+  convertToHourAndMin,
+  getMovieId,
+}) => {
+  const [img, setImg] = useState();
+  const mountedRef = useRef(true);
+
+  useEffect(() => {
+    setImg();
+    const image = new Image();
+    image.src = movie.Poster;
+    image.onload = () => {
+      setTimeout(() => {
+        if (mountedRef.current) {
+          setImg(image);
+        }
+      }, 300);
+      return () => {
+        mountedRef.current = false;
+      };
+    };
+  }, [movie]);
+  return (
+    <div className="movie">
+      {img ? (
+        <>
+          <Link
+            to={`/home/${search}/${movie.omdbID}`}
+            onClick={() => getMovieId(movie.omdbID)}
+          >
+            <figure className="movie__img--wrapper">
+              <img src={img.src} className="movie__img" />
+            </figure>
+          </Link>
+          <div className="movie__title">
+            <Link
+              to={`/home/${search}/${movie.omdbID}`}
+              onClick={() => getMovieId(movie.omdbID)}
+              className="movie__title--link"
+            >
+              <div className="movie__selected--title">{movie.Title}</div>
+              <div className="movie__label">
+                Released : <span>{movie.Year ? movie.Year : "N/A"}</span>
+              </div>
+            </Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="movie__img--skeleton"></div>
+          <div className="skeleton movie__title--skeleton"></div>
+          <div className="skeleton movie__rating--skeleton"></div>
+          <div className="skeleton movie__price--skeleton"></div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default Movie;
