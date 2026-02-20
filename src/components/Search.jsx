@@ -48,7 +48,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
         />
         {landing ? (
           loading ? (
-            <div className="search__icon--wrapper loading">
+            <button data-v-2a11e7ca="" className="search__button--link loading">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -66,7 +66,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
                   class=""
                 ></path>
               </svg>
-            </div>
+            </button>
           ) : (
             <div
               className="search__icon--wrapper"
