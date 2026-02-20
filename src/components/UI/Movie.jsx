@@ -35,8 +35,8 @@ const Movie = ({
       {img ? (
         <>
           <Link
-            to={`/home/${search}/${movie.omdbID}`}
-            onClick={() => getMovieId(movie.omdbID)}
+            to={`/home/${search}/${movie.imdbID}`}
+            onClick={() => getMovieId(movie.imdbID)}
           >
             <figure className="movie__img--wrapper">
               <img src={img.src} className="movie__img" />

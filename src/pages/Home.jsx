@@ -95,7 +95,7 @@ const Home = () => {
             sortedMovies.map((movie, index) => (
               <MovieCard
                 key={index}
-                omdbID={movie.omdbID}
+                imdbID={movie.imdbID}
                 poster={movie.Poster}
                 title={movie.Title}
                 year={movie.Year}
@@ -107,7 +107,7 @@ const Home = () => {
               <MovieCard
                 key={index}
                 search={search}
-                omdbID={movie.omdbID}
+                imdbID={movie.imdbID}
                 poster={movie.Poster}
                 title={movie.Title}
                 year={movie.Year}

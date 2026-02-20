@@ -20,15 +20,15 @@ library.add(faBars, faTimes, faStar, faStarHalfAlt, faArrowLeft);
 const MovieInfo = () => {
   const { search, id } = useParams();
   const [currentMovie, setCurrentMovie] = useState(null);
-  const [movieDetails, setMovieDetails] = useState([]);
   const { movies, setMovies, loading, setLoading, getMovies } =
     useContext(MoviesContext);
 
   const getMovieId = async (paramId) => {
     console.log(`https://www.omdbapi.com/?apikey=f16911f3&i=${paramId}`);
     try {
+      setLoading(true);
       const response = await axios.get(
-        `https://www.omdbapi.com/?apikey=f16911f3&i=${paramId}`,
+        `https://www.omdbapi.com/?apikey=f16911f3&i=${paramId}`
       );
       if (response.data.Response === "True") {
         setCurrentMovie(response.data);
@@ -38,19 +38,16 @@ const MovieInfo = () => {
       }
     } catch (error) {
       console.error("Error Fetching Movies:", error);
-      return null;
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    if ((!movies || movies.length === 0) && search) {
-      setLoading(true);
-      console.log(search);
-      getMovies(`s=${search}`);
+    if (id) {
+      getMovieId(id);
     }
-    getMovieId(id);
-    setLoading(false);
-  }, [id, search]);
+  }, [id]);
 
   const title = currentMovie?.Title || "Loading...";
   const revenue = currentMovie?.BoxOffice || "0";
