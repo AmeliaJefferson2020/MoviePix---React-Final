@@ -19,12 +19,12 @@ function App() {
 
   const getMovies = async (paramStr) => {
     console.log(
-      `http://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr}`,
+      `https://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr}`,
     );
     try {
       console.log(loading);
       const { data } = await axios.get(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr || ""}`,
+        `https://www.omdbapi.com/?i=tt3896198&apikey=f16911f3&${paramStr || ""}`,
       );
       const { Search } = data;
       setMovies(!Search ? null : Search);
