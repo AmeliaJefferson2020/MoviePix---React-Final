@@ -574,3 +574,37 @@ select:hover {
 }
 
 /* LANDING PAGE */
+
+.search__button,
+.search__button--link {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 125, 3);
+  z-index: 10;
+  cursor: pointer;
+  padding: 0 20px 0 8px;
+}
+
+.search__button--link svg,
+.search__button svg {
+  width: 32px;
+  height: 32px;
+  overflow: visible;
+}
+
+.search__button--link.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
