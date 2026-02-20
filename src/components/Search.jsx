@@ -57,7 +57,7 @@ const Search = ({ landing, searchChange, searchChangeLanding }) => {
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-                className="svg-inline--fa fa-spinner fa-w-16"
+                className=""
               >
                 <path
                   data-v-cf78a876=""

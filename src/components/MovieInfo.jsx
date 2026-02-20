@@ -131,7 +131,7 @@ const MovieInfo = () => {
                     <div className="movie__selected--description">
                       <h2 className="movie__selected--title">{title}</h2>
                       {currentMovie ? (
-                        <Rating rating={+currentMovie.imdbRating}></Rating>
+                        <Rating rating={+currentMovie.omdbRating}></Rating>
                       ) : (
                         <></>
                       )}

@@ -166,7 +166,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0 20px 0 8px;
-  top: 0;
+  top: 40px;
   bottom: 0;
   right: 0;
   color: rgb(255, 125, 3);
@@ -216,12 +216,14 @@ button {
   transform: translateX(0.5em);
   transform: translateY(0.3em);
   padding-left: 10px;
+  padding-top: 40px;
 }
 
 .result__title {
   color: rgb(255, 125, 3);
   font-size: 28px;
   line-height: 1.5;
+  margin-top: 40px;
 }
 
 select {
@@ -233,7 +235,7 @@ select {
   padding: 0 16px;
   width: 100%;
   max-width: 200px;
-  margin: 32px 0;
+  margin: 40px 0;
 }
 
 select:hover {
@@ -491,6 +493,7 @@ select:hover {
   }
   #search__keyword {
     transform: translateX(0);
+    transform: translateY(-35px);
   }
   .movie__card {
     max-width: 245px;
@@ -557,6 +560,7 @@ select:hover {
 .movie__title--skeleton {
   height: 21px;
   width: 100%;
+  max-width: 250px;
 }
 
 .movie__rating--skeleton {
@@ -567,4 +571,21 @@ select:hover {
 .movie__price--skeleton {
   width: 200px;
   height: 19px;
+}
+
+/* LANDING PAGE */
+
+.search__button--link svg {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 8px;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  color: rgb(255, 125, 3);
+  z-index: 10;
+  cursor: pointer;
+  
 }
