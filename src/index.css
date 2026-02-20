@@ -412,40 +412,40 @@ select:hover {
 
 .fa-arrow-left {
   font-size: 30px;
-  color: #fff;
+  color: rgb(192, 96, 6);
 }
 
 .movie__selected--title--top {
   margin-left: 10px;
   margin-bottom: 0;
-  color: #fff;
+  color: rgb(192, 96, 6);
 }
 
 .movie__summary {
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #fff;
+  color: rgb(192, 96, 6);
 }
 
 .movie__selected--title {
   margin-bottom: 8px;
-  color: #fff;
+  color: rgb(255, 221, 0)
 }
 
 .movie__summary--title {
   margin-bottom: 8px;
   font-weight: 700;
-  color: #fff;
+  color: rgb(221, 2, 2);
 }
 
 .movie__summary--para {
   margin-bottom: 16px;
-  color: #fff;
+  color: rgb(255, 125, 3);
 }
 
 .movie__summary--details li {
   margin: 10px 0;
-  color: #fff;
+  color: rgb(221, 2, 2);
 }
 
 .movie__ratings {

@@ -181,7 +181,6 @@ const MovieInfo = () => {
                           </li>
                         </ul>
                       </div>
-                      <button className="movie__button">Add to Playlist</button>
                     </div>
                   </div>
                 </div>

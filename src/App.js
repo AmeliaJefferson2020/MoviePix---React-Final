@@ -35,7 +35,7 @@ function App() {
       console.log(loading);
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 1000);
     }
   };
 

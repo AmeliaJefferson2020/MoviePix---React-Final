@@ -51,7 +51,7 @@ const Home = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
     if ((!movies || movies.length === 0) && search) {
       setLoading(true);
       getMovies(`s=${search}`);
