@@ -574,18 +574,3 @@ select:hover {
 }
 
 /* LANDING PAGE */
-
-.search__button--link svg {
-  font-size: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px 0 8px;
-  top: 40px;
-  bottom: 0;
-  right: 0;
-  color: rgb(255, 125, 3);
-  z-index: 10;
-  cursor: pointer;
-  
-}
